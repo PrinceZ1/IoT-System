@@ -34,7 +34,7 @@ const Datas = () => {
   ];
 
   const [paginationModel, setPaginationModel] = React.useState({
-    pageSize: 1, // Số lượng hàng trên mỗi trang
+    pageSize: 3, // Số lượng hàng trên mỗi trang
     page: 0,     // Trang hiện tại
   });
 

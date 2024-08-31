@@ -67,7 +67,7 @@ const SideBar = () => {
                   variant="h4"
                   fontWeight="bold"
                   textTransform="capitalize"
-                  color={colors.greenAccent[500]}
+                  color={colors.gray[100]}
                 >
                   IoT
                 </Typography>
@@ -101,7 +101,7 @@ const SideBar = () => {
             <Typography
               variant="h6"
               fontWeight="500"
-              color={colors.greenAccent[500]}
+              color={colors.redAccent[300]}
             >
               B21DCCN569
             </Typography>

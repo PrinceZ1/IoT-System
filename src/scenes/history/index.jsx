@@ -1,16 +1,16 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { Header } from "../../components";
 import { DataGrid } from "@mui/x-data-grid";
 import { mockDataHistory } from "../../data/mockData";
 import { tokens } from "../../theme";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Pagination from "@mui/material/Pagination";
 
 function Toolbar({ page, pageCount, onPageChange }) {
   return (
     <Pagination
       sx={(theme) => ({ padding: theme.spacing(1.5, 0) })}
-      color="standard"
+      color="primary" // Sử dụng màu sắc từ theme để đồng bộ hóa giao diện
       count={pageCount}
       page={page + 1}
       onChange={(event, value) => onPageChange(value - 1)}
@@ -30,13 +30,15 @@ const History = () => {
   ];
 
   const [paginationModel, setPaginationModel] = useState({
-    pageSize: 1, // Số lượng hàng mỗi trang
+    pageSize: 3, // Số lượng hàng mỗi trang
     page: 0, // Trang hiện tại
   });
 
-  const pageCount = Math.ceil(
-    mockDataHistory.length / paginationModel.pageSize
-  ); // Tính tổng số trang
+  const [sortModel, setSortModel] = useState([]); // Thêm trạng thái cho sắp xếp
+
+  const pageCount = useMemo(() => {
+    return Math.ceil(mockDataHistory.length / paginationModel.pageSize); // Tính tổng số trang
+  }, [mockDataHistory.length, paginationModel.pageSize]);
 
   const handlePageChange = (newPage) => {
     setPaginationModel((prevModel) => ({
@@ -80,6 +82,8 @@ const History = () => {
           columns={columns}
           paginationModel={paginationModel}
           onPaginationModelChange={setPaginationModel}
+          sortModel={sortModel} // Thêm trạng thái sortModel vào DataGrid
+          onSortModelChange={(newSortModel) => setSortModel(newSortModel)} // Xử lý sự kiện thay đổi sắp xếp
           hideFooter
           slots={{
             toolbar: () => (

@@ -7,63 +7,63 @@ export const mockDataDatas = [
     temp: "28℃",
     humidity: "60%",
     bright: "34 Lux",
-    time: "21:23"
+    time: "21:23 28/08/2024"
   },
   {
     id: 2,
-    temp: "28℃",
-    humidity: "60%",
-    bright: "34 Lux",
-    time: "21:23"
+    temp: "30℃",
+    humidity: "70%",
+    bright: "56 Lux",
+    time: "21:23 28/08/2024"
   },
   {
     id: 3,
-    temp: "28℃",
-    humidity: "60%",
-    bright: "34 Lux",
-    time: "21:23"
+    temp: "23℃",
+    humidity: "80%",
+    bright: "90 Lux",
+    time: "21:23 28/08/2024"
   },
   {
     id: 4,
-    temp: "28℃",
-    humidity: "60%",
-    bright: "34 Lux",
-    time: "21:23"
+    temp: "22℃",
+    humidity: "69%",
+    bright: "56 Lux",
+    time: "21:23 28/08/2024"
   },
   {
     id: 5,
     temp: "28℃",
-    humidity: "60%",
-    bright: "34 Lux",
-    time: "21:23"
+    humidity: "50%",
+    bright: "90 Lux",
+    time: "21:23 28/08/2024"
   },
   {
     id: 6,
-    temp: "28℃",
-    humidity: "60%",
-    bright: "34 Lux",
-    time: "21:23"
+    temp: "35℃",
+    humidity: "70%",
+    bright: "78 Lux",
+    time: "21:23 28/08/2024"
   },
   {
     id: 7,
-    temp: "28℃",
+    temp: "21℃",
     humidity: "60%",
-    bright: "34 Lux",
-    time: "21:23"
+    bright: "54 Lux",
+    time: "21:23 28/08/2024"
   },
   {
     id: 8,
-    temp: "28℃",
+    temp: "34℃",
     humidity: "60%",
-    bright: "34 Lux",
-    time: "21:23"
+    bright: "78 Lux",
+    time: "21:23 28/08/2024"
   },
   {
     id: 9,
-    temp: "28℃",
-    humidity: "60%",
-    bright: "34 Lux",
-    ime: "21:23"
+    temp: "25℃",
+    humidity: "40%",
+    bright: "90 Lux",
+    ime: "21:23 28/08/2024"
   }
 ];
 
@@ -72,55 +72,55 @@ export const mockDataHistory = [
     id: 1,
     device: "Fan",
     active: "ON",
-    time: "21:23"
+    time: "21:23 28/08/2024"
   },
   {
     id: 2,
     device: "Lightbulb",
     active: "OFF",
-    time: "21:23"
+    time: "21:23 28/08/2024"
   },
   {
     id: 3,
     device: "Fan",
     active: "ON",
-    time: "21:23"
+    time: "5:25 29/08/2024"
   },
   {
     id: 4,
-    device: "Fan",
-    active: "ON",
-    time: "21:23"
+    device: "Air Conditioner",
+    active: "OFF",
+    time: "19:23 30/08/2024"
   },
   {
     id: 5,
     device: "Fan",
-    active: "ON",
-    time: "21:23"
+    active: "OFF",
+    time: "15:23 28/08/2024"
   },
   {
     id: 6,
-    device: "Fan",
+    device: "Lightbulb",
     active: "ON",
-    time: "21:23"
+    time: "12:23 27/08/2024"
   },
   {
     id: 7,
     device: "Fan",
     active: "ON",
-    time: "21:23"
+    time: "21:23 28/08/2024"
   },
   {
     id: 8,
-    device: "Fan",
+    device: "Air Conditioner",
     active: "ON",
-    time: "21:23"
+    time: "22:23 28/08/2024"
   },
   {
-    id: 8,
+    id: 9,
     device: "Fan",
     active: "ON",
-    time: "21:23"
+    time: "18:23 30/08/2024"
   }
 ];
 

@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import { tokens } from "../../theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faGithub, faInstagram, faDropbox } from "@fortawesome/free-brands-svg-icons";
+import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 
 const Profile = () => {
   const theme = useTheme();
@@ -90,8 +91,8 @@ const Profile = () => {
           </Button>
           <Button
             variant="outlined"
-            startIcon={<FontAwesomeIcon icon={faInstagram} />}
-            href="https://www.instagram.com/tnngynz/"
+            startIcon={<FontAwesomeIcon icon={faFilePdf} />}
+            href="https://www.google.com/"
             target="_blank"
             rel="noopener noreferrer"
             sx={{
@@ -106,7 +107,7 @@ const Profile = () => {
               },
             }}
           >
-            Instagram
+            Pdf
           </Button>
           <Button
             variant="outlined"

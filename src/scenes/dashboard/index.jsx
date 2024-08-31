@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { Header, StatBox, LineChart } from "../../components";
 import {
-  ArrowUpwardOutlined, 
+  ArrowUpwardOutlined,
   ArrowDownwardOutlined,
   WbSunnyOutlined,
   WaterDropOutlined,
@@ -63,61 +63,92 @@ function Dashboard() {
         {/* Statistic Items */}
         <Box
           gridColumn="span 3"
-          bgcolor={colors.primary[400]}
+          sx={{
+            background: "linear-gradient(to right, #ff7f7f, #ff4d4d)",
+            borderRadius: "12px",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+            padding: "16px",
+          }}
           display="flex"
           alignItems="center"
-          justifyContent="center"
+          justifyContent="space-between"
         >
-          <StatBox
-            title="28℃"
-            subtitle="Temperature"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <WbSunnyOutlined
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
+          <Box>
+            <Typography variant="h3" fontWeight="bold" color={colors.gray[800]}>
+              28℃
+            </Typography>
+            <Typography variant="subtitle1" color={colors.gray[700]}>
+              Temperature
+            </Typography>
+          </Box>
+          <WbSunnyOutlined
+            sx={{
+              color: "#FFD700", // Màu vàng sáng cho biểu tượng mặt trời
+              fontSize: "40px",
+              marginLeft: "16px",
+            }}
           />
         </Box>
+
         <Box
-          gridColumn="span 3"
-          bgcolor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="70%"
-            subtitle="Humidity"
-            progress="0.70"
-            increase="+21%"
-            icon={
-              <WaterDropOutlined
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          bgcolor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="120 lux"
-            subtitle="Bright"
-            progress="0.30"
-            increase="+5%"
-            icon={
-              <LightOutlined
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
+  gridColumn="span 3"
+  sx={{
+    background: "linear-gradient(to right, #42a5f5, #1e88e5)", // Màu gradient xanh dương
+    borderRadius: "12px", // Bo tròn các góc
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", // Thêm bóng để tạo chiều sâu
+    padding: "16px", // Thêm padding để tạo khoảng cách xung quanh
+  }}
+  display="flex"
+  alignItems="center"
+  justifyContent="space-between"
+>
+  <Box>
+    <Typography variant="h3" fontWeight="bold" color={colors.gray[800]}>
+      70%
+    </Typography>
+    <Typography variant="subtitle1" color={colors.gray[700]}>
+      Humidity
+    </Typography>
+  </Box>
+  <WaterDropOutlined
+    sx={{
+      color: "#E0F7FA", // Màu xanh sáng cho biểu tượng
+      fontSize: "40px",
+      marginLeft: "16px",
+    }}
+  />
+</Box>
+
+
+<Box
+  gridColumn="span 3"
+  sx={{
+    background: `linear-gradient(to right, ${colors.gray[100]}, ${colors.gray[300]})`, // Màu gradient xám
+    borderRadius: "12px", // Bo tròn các góc
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", // Thêm bóng để tạo chiều sâu
+    padding: "16px", // Thêm padding để tạo khoảng cách xung quanh
+  }}
+  display="flex"
+  alignItems="center"
+  justifyContent="space-between"
+>
+  <Box>
+    <Typography variant="h3" fontWeight="bold" color={colors.gray[800]}>
+      120 lux
+    </Typography>
+    <Typography variant="subtitle1" color={colors.gray[700]}>
+      Bright
+    </Typography>
+  </Box>
+  <LightOutlined
+    sx={{
+      color: "#FF7043", // Màu cam cho biểu tượng
+      fontSize: "40px",
+      marginLeft: "16px",
+    }}
+  />
+</Box>
+
 
         {/* ---------------- Row 2 ---------------- */}
 
@@ -174,11 +205,16 @@ function Dashboard() {
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              p="10px"
-              bgcolor={colors.primary[300]}
-              borderRadius="8px"
+              p="16px" // Tăng padding để tạo khoảng cách rộng hơn
+              bgcolor={colors.primary[400]} // Đổi màu nền nhẹ hơn một chút
+              borderRadius="12px" // Tăng border-radius để góc bo tròn hơn
+              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)" // Thêm bóng cho hộp để tạo chiều sâu
             >
-              <Typography variant="h6" fontWeight="600">
+              <Typography
+                variant="h6"
+                fontWeight="600"
+                color={colors.textPrimary}
+              >
                 Fan
               </Typography>
               <FormControlLabel
@@ -212,8 +248,12 @@ function Dashboard() {
                       }
                       size="2x"
                     />
-                    <Typography variant="body2" ml="8px">
-                      {switchState.fan ? "On" : "Off"}
+                    <Typography
+                      variant="body2"
+                      ml="12px"
+                      color={colors.textSecondary}
+                    >
+                      {switchState.fan ? "ON" : "OFF"}
                     </Typography>
                   </Box>
                 }
@@ -226,11 +266,16 @@ function Dashboard() {
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              p="10px"
-              bgcolor={colors.primary[300]}
-              borderRadius="8px"
+              p="16px" // Tăng padding để tạo khoảng cách rộng hơn
+              bgcolor={colors.primary[400]} // Đổi màu nền nhẹ hơn một chút
+              borderRadius="12px" // Tăng border-radius để góc bo tròn hơn
+              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)" // Thêm bóng cho hộp để tạo chiều sâu
             >
-              <Typography variant="h6" fontWeight="600">
+              <Typography
+                variant="h6"
+                fontWeight="600"
+                color={colors.textPrimary}
+              >
                 Air Conditioner
               </Typography>
               <FormControlLabel
@@ -264,8 +309,12 @@ function Dashboard() {
                       }
                       size="2x"
                     />
-                    <Typography variant="body2" ml="8px">
-                      {switchState.airConditioner ? "On" : "Off"}
+                    <Typography
+                      variant="body2"
+                      ml="12px"
+                      color={colors.textSecondary}
+                    >
+                      {switchState.airConditioner ? "ON" : "OFF"}
                     </Typography>
                   </Box>
                 }
@@ -278,11 +327,16 @@ function Dashboard() {
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              p="10px"
-              bgcolor={colors.primary[300]}
-              borderRadius="8px"
+              p="16px" // Tăng padding để tạo khoảng cách rộng hơn
+              bgcolor={colors.primary[400]} // Đổi màu nền nhẹ hơn một chút
+              borderRadius="12px" // Tăng border-radius để góc bo tròn hơn
+              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)" // Thêm bóng cho hộp để tạo chiều sâu
             >
-              <Typography variant="h6" fontWeight="600">
+              <Typography
+                variant="h6"
+                fontWeight="600"
+                color={colors.textPrimary}
+              >
                 Lightbulb
               </Typography>
               <FormControlLabel
@@ -316,8 +370,12 @@ function Dashboard() {
                       }
                       size="2x"
                     />
-                    <Typography variant="body2" ml="8px">
-                      {switchState.lightbulb ? "On" : "Off"}
+                    <Typography
+                      variant="body2"
+                      ml="12px"
+                      color={colors.textSecondary}
+                    >
+                      {switchState.lightbulb ? "ON" : "OFF"}
                     </Typography>
                   </Box>
                 }
