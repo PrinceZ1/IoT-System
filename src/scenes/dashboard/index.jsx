@@ -1,17 +1,14 @@
 import React from "react";
 import {
   Box,
-  IconButton,
   Typography,
   useMediaQuery,
   useTheme,
   Switch,
   FormControlLabel,
 } from "@mui/material";
-import { Header, StatBox, LineChart } from "../../components";
+import { Header, LineChart } from "../../components";
 import {
-  ArrowUpwardOutlined,
-  ArrowDownwardOutlined,
   WbSunnyOutlined,
   WaterDropOutlined,
   LightOutlined,
@@ -19,6 +16,47 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFan, faWind, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { tokens } from "../../theme";
+
+const spinAnimation = `
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+`;
+
+const acBlowAnimation = `
+@keyframes blowWind {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+`;
+
+const blinkAnimation = `
+@keyframes blinkLightbulb {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+`;
+
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = `${spinAnimation}${acBlowAnimation}${blinkAnimation}`;
+document.head.appendChild(styleSheet);
 
 function Dashboard() {
   const theme = useTheme();
@@ -83,7 +121,7 @@ function Dashboard() {
           </Box>
           <WbSunnyOutlined
             sx={{
-              color: "#FFD700", // Màu vàng sáng cho biểu tượng mặt trời
+              color: "#FFD700", 
               fontSize: "40px",
               marginLeft: "16px",
             }}
@@ -91,64 +129,62 @@ function Dashboard() {
         </Box>
 
         <Box
-  gridColumn="span 3"
-  sx={{
-    background: "linear-gradient(to right, #42a5f5, #1e88e5)", // Màu gradient xanh dương
-    borderRadius: "12px", // Bo tròn các góc
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", // Thêm bóng để tạo chiều sâu
-    padding: "16px", // Thêm padding để tạo khoảng cách xung quanh
-  }}
-  display="flex"
-  alignItems="center"
-  justifyContent="space-between"
->
-  <Box>
-    <Typography variant="h3" fontWeight="bold" color={colors.gray[800]}>
-      70%
-    </Typography>
-    <Typography variant="subtitle1" color={colors.gray[700]}>
-      Humidity
-    </Typography>
-  </Box>
-  <WaterDropOutlined
-    sx={{
-      color: "#E0F7FA", // Màu xanh sáng cho biểu tượng
-      fontSize: "40px",
-      marginLeft: "16px",
-    }}
-  />
-</Box>
+          gridColumn="span 3"
+          sx={{
+            background: "linear-gradient(to right, #42a5f5, #1e88e5)",
+            borderRadius: "12px",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+            padding: "16px",
+          }}
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Box>
+            <Typography variant="h3" fontWeight="bold" color={colors.gray[800]}>
+              70%
+            </Typography>
+            <Typography variant="subtitle1" color={colors.gray[700]}>
+              Humidity
+            </Typography>
+          </Box>
+          <WaterDropOutlined
+            sx={{
+              color: "#E0F7FA",
+              fontSize: "40px",
+              marginLeft: "16px",
+            }}
+          />
+        </Box>
 
-
-<Box
-  gridColumn="span 3"
-  sx={{
-    background: `linear-gradient(to right, ${colors.gray[100]}, ${colors.gray[300]})`, // Màu gradient xám
-    borderRadius: "12px", // Bo tròn các góc
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", // Thêm bóng để tạo chiều sâu
-    padding: "16px", // Thêm padding để tạo khoảng cách xung quanh
-  }}
-  display="flex"
-  alignItems="center"
-  justifyContent="space-between"
->
-  <Box>
-    <Typography variant="h3" fontWeight="bold" color={colors.gray[800]}>
-      120 lux
-    </Typography>
-    <Typography variant="subtitle1" color={colors.gray[700]}>
-      Bright
-    </Typography>
-  </Box>
-  <LightOutlined
-    sx={{
-      color: "#FF7043", // Màu cam cho biểu tượng
-      fontSize: "40px",
-      marginLeft: "16px",
-    }}
-  />
-</Box>
-
+        <Box
+          gridColumn="span 3"
+          sx={{
+            background: `linear-gradient(to right, ${colors.gray[100]}, ${colors.gray[300]})`,
+            borderRadius: "12px",
+            boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+            padding: "16px",
+          }}
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Box>
+            <Typography variant="h3" fontWeight="bold" color={colors.gray[800]}>
+              120 lux
+            </Typography>
+            <Typography variant="subtitle1" color={colors.gray[700]}>
+              Bright
+            </Typography>
+          </Box>
+          <LightOutlined
+            sx={{
+              color: "#FF7043", 
+              fontSize: "40px",
+              marginLeft: "16px",
+            }}
+          />
+        </Box>
 
         {/* ---------------- Row 2 ---------------- */}
 
@@ -205,10 +241,10 @@ function Dashboard() {
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              p="16px" // Tăng padding để tạo khoảng cách rộng hơn
-              bgcolor={colors.primary[400]} // Đổi màu nền nhẹ hơn một chút
-              borderRadius="12px" // Tăng border-radius để góc bo tròn hơn
-              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)" // Thêm bóng cho hộp để tạo chiều sâu
+              p="16px"
+              bgcolor={colors.primary[400]}
+              borderRadius="12px"
+              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)"
             >
               <Typography
                 variant="h6"
@@ -247,6 +283,11 @@ function Dashboard() {
                           : colors.redAccent[600]
                       }
                       size="2x"
+                      style={{
+                        animation: switchState.fan
+                          ? "spin 2s linear infinite"
+                          : "none",
+                      }}
                     />
                     <Typography
                       variant="body2"
@@ -266,10 +307,10 @@ function Dashboard() {
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              p="16px" // Tăng padding để tạo khoảng cách rộng hơn
-              bgcolor={colors.primary[400]} // Đổi màu nền nhẹ hơn một chút
-              borderRadius="12px" // Tăng border-radius để góc bo tròn hơn
-              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)" // Thêm bóng cho hộp để tạo chiều sâu
+              p="16px"
+              bgcolor={colors.primary[400]}
+              borderRadius="12px"
+              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)"
             >
               <Typography
                 variant="h6"
@@ -308,6 +349,11 @@ function Dashboard() {
                           : colors.redAccent[600]
                       }
                       size="2x"
+                      style={{
+                        animation: switchState.airConditioner
+                          ? "blowWind 1.5s ease-in-out infinite"
+                          : "none",
+                      }}
                     />
                     <Typography
                       variant="body2"
@@ -327,10 +373,10 @@ function Dashboard() {
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              p="16px" // Tăng padding để tạo khoảng cách rộng hơn
-              bgcolor={colors.primary[400]} // Đổi màu nền nhẹ hơn một chút
-              borderRadius="12px" // Tăng border-radius để góc bo tròn hơn
-              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)" // Thêm bóng cho hộp để tạo chiều sâu
+              p="16px"
+              bgcolor={colors.primary[400]}
+              borderRadius="12px"
+              boxShadow="0 4px 10px rgba(0, 0, 0, 0.1)"
             >
               <Typography
                 variant="h6"
@@ -369,6 +415,11 @@ function Dashboard() {
                           : colors.redAccent[600]
                       }
                       size="2x"
+                      style={{
+                        animation: switchState.lightbulb
+                          ? "blinkLightbulb 1s infinite"
+                          : "none",
+                      }}
                     />
                     <Typography
                       variant="body2"

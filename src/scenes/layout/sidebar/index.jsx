@@ -6,7 +6,6 @@ import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 import {
   AnalyticsOutlined,
   DashboardOutlined,
-  Face2Outlined,
   MenuOutlined,
   PeopleAltOutlined,
   ReceiptOutlined,
@@ -101,7 +100,7 @@ const SideBar = () => {
             <Typography
               variant="h6"
               fontWeight="500"
-              color={colors.redAccent[300]}
+              color={colors.redAccent[400]}
             >
               B21DCCN569
             </Typography>

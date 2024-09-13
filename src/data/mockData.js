@@ -63,7 +63,7 @@ export const mockDataDatas = [
     temp: "25℃",
     humidity: "40%",
     bright: "90 Lux",
-    ime: "21:23 28/08/2024"
+    time: "21:23 28/08/2024"
   }
 ];
 

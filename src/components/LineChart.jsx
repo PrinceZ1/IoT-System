@@ -28,24 +28,24 @@ const LineChart = ({ isDashboard = false }) => {
           data: [
             ...prevData[0].data,
             { x: new Date().toLocaleTimeString(), y: newTemperature },
-          ].slice(-5), // Giữ lại 5 điểm dữ liệu cuối cùng
+          ].slice(-7), 
         },
         {
           id: "humidity",
           data: [
             ...prevData[1].data,
             { x: new Date().toLocaleTimeString(), y: newHumidity },
-          ].slice(-5), // Giữ lại 5 điểm dữ liệu cuối cùng
+          ].slice(-7), 
         },
         {
           id: "brightness",
           data: [
             ...prevData[2].data,
             { x: new Date().toLocaleTimeString(), y: newBrightness },
-          ].slice(-5), // Giữ lại 5 điểm dữ liệu cuối cùng
+          ].slice(-7), 
         },
       ]);
-    }, 1500); // Cập nhật mỗi giây
+    }, 1500);
 
     return () => clearInterval(interval); // Dọn dẹp interval khi component unmount
   }, []);
@@ -92,11 +92,11 @@ const LineChart = ({ isDashboard = false }) => {
       colors={({ id }) => {
         switch (id) {
           case "temperature":
-            return "#FF6F61"; // Màu đỏ cam cho Temperature
+            return "#FF6F61";
           case "humidity":
-            return "#1E88E5"; // Màu xanh dương cho Humidity
+            return "#1E88E5";
           case "brightness":
-            return "#FFEB3B"; // Màu vàng sáng cho Brightness
+            return "#FFEB3B";
           default:
             return colors.gray[500];
         }
